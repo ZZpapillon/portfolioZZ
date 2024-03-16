@@ -1,0 +1,44 @@
+.contactContainer {
+    font-family: Roboto Condensed, sans-serif;
+}
+
+/* Contact.css */
+.email-link {
+    color: #aeaeae !important;
+    /* Use !important only if necessary */
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000000;
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    .contactContainer footer {
+        font-size: 1.5rem!important;
+        /* Adjust the font size as needed */
+    }
+
+    .contactContainer .col h1,
+    .contactContainer .col p,
+    .contactContainer .col .email-link {
+        font-size: 2rem!important;
+        /* Adjust the font size as needed */
+        /* Add any other style adjustments for smaller screens here */
+    }
+}
+
+@media (max-width: 500px) {
+    .contactContainer footer {
+        font-size: 1rem !important;
+        /* Adjust the font size as needed */
+    }
+
+    .contactContainer .col h1,
+    .contactContainer .col p,
+    .contactContainer .col .email-link {
+        font-size: 1.3rem !important;
+        /* Adjust the font size as needed */
+        /* Add any other style adjustments for smaller screens here */
+    }
+}

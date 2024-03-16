@@ -1,0 +1,679 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden!important;
+ 
+   
+}
+.appContainer {
+    height: 100vh;
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-y: auto !important;
+        /* Show scrollbar only if there's overflow */
+        overflow-x: hidden !important;
+        
+        /* Center-align the children */
+       
+      
+    
+}
+ 
+.appContainer::-webkit-scrollbar {
+    width: 10px!important;
+    /* Increase the width for better visibility */
+    z-index: 99999;
+}
+
+.appContainer::-webkit-scrollbar-track {
+    background: white;
+    /* Black background for high contrast */
+}
+
+.appContainer::-webkit-scrollbar-thumb {
+    
+    background: #007bff;
+    /* Your primary color for the thumb */
+    border-radius: 8px;
+    /* Rounded corners for a modern look */
+    border: 1px solid white;
+    /* Black border to match the track */
+}
+
+.appContainer::-webkit-scrollbar-thumb:hover {
+    background: #007bff;
+    /* A slightly darker shade of your primary color for hover effect */
+}
+
+.modelContainer {
+  height: 100vh;
+  width: 70vw;
+  margin-top: 20vh;
+  
+ 
+  
+  position: relative;
+  z-index: 1;
+ 
+}
+@media (max-width: 380px) {
+    .appContainer {
+        display: flex;
+        /* Adjust the main container for smaller screens */
+        flex-direction: column;
+        align-items: center;
+        /* Ensure content is centered */
+        gap: 10px;
+        width: 100vw !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        /* Add some space between elements */
+    }
+
+    .modelContainer {
+        width: 100% !important;
+        height: 70vh !important;
+        /* Full width to utilize small screen space */
+        order: -1;
+        /* Keep the model at the top */
+        transform: scale(0.95);
+        /* Scale down the model to fit better */
+        margin-top: 55vh!important;
+        margin-left: 1vw;
+        /* Reduce top margin */
+    }
+
+    .textContainer {
+        width: 85% !important;
+        /* Reduce width for more padding */
+        margin-top: -10vh !important;
+        /* Adjust top margin */
+        padding-left: 10px !important;
+        /* Reduce padding */
+        padding-right: 0px !important;
+        margin-left: 0vw !important;
+    }
+
+    .modelContainer canvas {
+        width: 100% !important;
+        /* Ensure canvas takes full width */
+        height: 50vh !important;
+        /* Adjust canvas height */
+    }
+
+    /* Further reduce font sizes for text, links, and buttons */
+    .textContainer p,
+    .textContainer a,
+    .buttonNext {
+        font-size: 1.1rem !important;
+        /* You might specify exact sizes if needed */
+    }
+
+    .buttonNext {
+        top: 2.5vh !important;
+        left: 75% !important;
+        width: fit-content;
+    }
+
+    .projectsName {
+        font-size: 2.5rem !important;
+
+
+    }
+
+    .projectsSubName {
+        font-size: 2rem !important;
+        font-weight: bold;
+        margin-bottom: 0.5rem !important;
+
+    }
+
+    .technologies {
+        margin-top: 0.5rem !important;
+    }
+
+    .links {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .projects {
+        top: 1vh !important;
+    }
+
+    /* If there are any other elements that need adjustment, add them here */
+}
+@media (min-width: 490px) and (max-width: 768px) {
+    .appContainer {
+        display: flex;
+        flex-direction: column;
+        /* Stack children vertically */
+        align-items: start;
+        gap: 0;
+        width: 100vw;
+        overflow-y: auto!important;
+        overflow-x: hidden!important;
+        
+
+        /* Center-align the children */
+    }
+
+    .modelContainer {
+        width: 100%;
+        /* Full width */
+        order: -1;
+        /* Ensure model appears at the top */
+        transform: scale(0.9);
+        /* Reset any scaling */
+        margin-top: 8vh;
+        /* Adjust margin as needed */
+    }
+
+    .textContainer {
+        /* Adjust text container to appear below the model */
+        width: 90%!important;
+        /* Slightly less than full width for padding */
+        margin-top: -10vh!important;
+        padding-left: 50px!important;
+        padding-right: 50px!important;
+        margin-left: 0vw !important;
+        /* Space between model and text */
+    }
+
+    /* Adjustments for the model's canvas size if necessary */
+    .modelContainer canvas {
+        width: 100% !important;
+        /* Override to ensure full width */
+        height: 50vh !important;
+        /* Adjust height as needed */
+    }
+
+    /* Further adjustments for text sizes and button as previously described */
+    
+    .textContainer p,
+        .textContainer a,
+    .buttonNext {
+        font-size: smaller;
+        
+    }
+    .buttonNext {
+        top: 2.5vh !important;
+            left: 60% !important;
+            width: fit-content;
+    }
+         .projectsName {
+             font-size: 2.5rem !important;
+    
+    
+         }
+    
+         .projectsSubName {
+             font-size: 2rem !important;
+             font-weight: bold;
+             margin-bottom: 0.5rem !important;
+    
+         }
+    
+         .technologies {
+             margin-top: 0.5rem !important;
+         }
+    
+         .links {
+             margin-top: 1rem !important;
+         }
+         .projects {
+            top: 1vh!important;
+         }
+}
+@media (max-width: 490px) {
+    .appContainer {
+        display: flex;
+        /* Adjust the main container for smaller screens */
+        flex-direction: column;
+        align-items: center;
+        /* Ensure content is centered */
+        gap: 10px;
+        width: 100vw!important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        /* Add some space between elements */
+    }
+
+    .modelContainer {
+        width: 100%!important;
+        height: 70vh!important;
+        /* Full width to utilize small screen space */
+        order: -1;
+        /* Keep the model at the top */
+        transform: scale(0.95);
+        /* Scale down the model to fit better */
+        margin-top: 25vh;
+        margin-left: 1vw;
+        /* Reduce top margin */
+    }
+
+    .textContainer {
+        width: 85% !important;
+        /* Reduce width for more padding */
+        margin-top: -10vh !important;
+        /* Adjust top margin */
+        padding-left: 10px !important;
+        /* Reduce padding */
+        padding-right: 0px !important;
+        margin-left: 0vw !important;
+    }
+
+    .modelContainer canvas {
+        width: 100% !important;
+        /* Ensure canvas takes full width */
+        height: 50vh !important;
+        /* Adjust canvas height */
+    }
+
+    /* Further reduce font sizes for text, links, and buttons */
+    .textContainer p,
+    .textContainer a,
+    .buttonNext {
+        font-size: 1.1rem!important;
+        /* You might specify exact sizes if needed */
+    }
+
+   .buttonNext {
+       top: 2.5vh !important;
+       left: 75% !important;
+       width: fit-content;
+   }
+
+   .projectsName {
+       font-size: 2.5rem !important;
+
+
+   }
+
+   .projectsSubName {
+       font-size: 2rem !important;
+       font-weight: bold;
+       margin-bottom: 0.5rem !important;
+
+   }
+
+   .technologies {
+       margin-top: 0.5rem !important;
+   }
+
+   .links {
+       margin-top: 1rem !important;
+       margin-bottom: 1rem !important;
+   }
+
+   .projects {
+       top: 1vh !important;
+   }
+
+    /* If there are any other elements that need adjustment, add them here */
+}
+@media (min-width: 768px) and (max-width: 900px) {
+    .appContainer {
+        display: flex;
+        flex-direction: column;
+        /* Stack children vertically */
+        align-items: start;
+        gap: 0;
+        width: 100vw;
+        overflow-y: scroll!important;
+        scrollbar-width: 50px!important;
+        overflow-x: hidden!important;
+        
+        /* Center-align the children */
+    }
+
+    .modelContainer {
+        width: 100%;
+        /* Full width */
+        order: -1;
+        /* Ensure model appears at the top */
+        transform: scale(0.9);
+        /* Reset any scaling */
+        margin-top: 8vh;
+        /* Adjust margin as needed */
+    }
+
+    .textContainer {
+        /* Adjust text container to appear below the model */
+        width: 90% !important;
+        /* Slightly less than full width for padding */
+        margin-top: -20vh !important;
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+        margin-left: 0vw !important;
+        /* Space between model and text */
+    }
+
+    /* Adjustments for the model's canvas size if necessary */
+    .modelContainer canvas {
+        width: 100% !important;
+        /* Override to ensure full width */
+        height: 50vh !important;
+        /* Adjust height as needed */
+    }
+
+    /* Further adjustments for text sizes and button as previously described */
+
+    .textContainer p,
+    .textContainer a,
+    .buttonNext {
+        font-size: smaller;
+
+    }
+
+    .buttonNext {
+        
+        width: fit-content;
+        position: relative;
+    }
+         .projectsName {
+             font-size: 2.2rem !important;
+    
+    
+         }
+    
+         .projectsSubName {
+             font-size: 1.8rem !important;
+             font-weight: bold;
+             margin-bottom: 0.5rem !important;
+    
+         }
+    
+         .technologies {
+             margin-top: 0.5rem !important;
+         }
+    
+         .links {
+             margin-top: 0.5rem !important;
+         }
+}
+
+@media (min-width: 900px) and (max-width: 1300px) {
+            .buttonNext {
+                    top: 13vh !important;
+                    left: 5% !important;
+                    width: fit-content;
+                    position: absolute;
+                    z-index: 9999;
+                }
+                .appContainer {
+                        display: flex;
+                        flex-direction: column;
+                        /* Stack children vertically */
+                        align-items: start;
+                        gap: 0;
+                        width: 100vw;
+                        /* Center-align the children */
+                    }
+                
+                    .modelContainer {
+                        width: 100%;
+                        /* Full width */
+                        order: -1;
+                        /* Ensure model appears at the top */
+                        transform: scale(1);
+                        /* Reset any scaling */
+                        margin-top: 8vh;
+                        /* Adjust margin as needed */
+                    }
+                
+                    .textContainer {
+                        /* Adjust text container to appear below the model */
+                        width: 90% !important;
+                        /* Slightly less than full width for padding */
+                        margin-top: -15vh !important;
+                        padding-left: 50px !important;
+                        padding-right: 50px !important;
+                        /* Space between model and text */
+                        margin-left: 0vw!important;
+                    }
+                
+                    /* Adjustments for the model's canvas size if necessary */
+                    .modelContainer canvas {
+                        width: 100% !important;
+                        /* Override to ensure full width */
+                        height: 62vh !important;
+                        /* Adjust height as needed */
+                    }
+                    .projectsName {
+                        font-size: 2.5rem!important;
+                        
+                        
+                    }
+                    .projectsSubName {
+                        font-size: 2rem!important;
+                        font-weight: bold;
+                        margin-bottom: 0.5rem!important;
+                        
+                    }
+                    .technologies {
+                        margin-top: 0.5rem!important;
+                    }
+                    .links {
+                        margin-top: 1rem!important;
+                    }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+    .modelContainer {
+            width: 100%;
+            /* Full width */
+          
+            /* Ensure model appears at the top */
+            transform: scale(0.9);
+            /* Reset any scaling */
+           
+            /* Adjust margin as needed */
+        }
+                 .textContainer {
+                     /* Adjust text container to appear below the model */
+                     width: 40%!important;
+                     /* Slightly less than full width for padding */
+                     margin-left: -2vw !important;
+                     
+                     
+                     /* Space between model and text */
+                 }
+}
+
+/* .glowEffect {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 600px;
+    height: 500px;
+    opacity: 0.25;
+    border-radius: 30%;
+    box-shadow: 0 0 200px 100px #0a84ff, 0 0 59px 20px #0a84ff;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: glowEffectAnimation 10s infinite alternate;
+} */
+
+@keyframes glowEffectAnimation {
+    0% {
+        opacity: 0.1;
+        border-radius: 50%;
+        box-shadow: 0 0 150px 75px #007bff;
+        /* Sky Blue */
+    }
+
+    25% {
+        opacity: 0.2;
+        border-radius: 40%;
+        box-shadow: 0 0 200px 100px #1E90FF;
+        /* Dodger Blue */
+    }
+
+    50% {
+        opacity: 0.27;
+        border-radius: 30%;
+        box-shadow: 0 0 250px 125px #3D59AB;
+        /* Cobalt Blue */
+    }
+
+    75% {
+        opacity: 0.25;
+        border-radius: 20%;
+        box-shadow: 0 0 200px 100px #5F9EA0;
+        /* Cadet Blue */
+    }
+
+    100% {
+        opacity: 0.3;
+        border-radius: 10%;
+        box-shadow: 0 0 150px 75px #4682B4;
+        /* Steel Blue */
+    }
+}
+
+.projects {
+    color: white;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 25px;
+    left: 45px;
+    font-family: Roboto Condensed,  sans-serif;
+    
+
+}
+.projectsName {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bolder;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-family: Roboto Condensed, sans-serif;
+
+
+}
+.buttonNext {
+    color: white;
+  
+    position: absolute;
+    top: 15vh;
+    left: 2vw;
+    font-family: Roboto Condensed, sans-serif;
+   z-index: 9999;
+
+
+}
+
+.textContainer {
+    height: 100%;
+    width: 30vw;
+    color: #FFFFFF;
+    
+    font-family:     Roboto Condensed, sans-serif;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-top: 20vh;
+    z-index: 9999!important;
+    margin-left: -2vw;
+
+
+}
+
+.textContainer h1 {
+    /* Style for your headings */
+    margin-bottom: 1rem;
+    /* Adjust as needed */
+}
+
+.textContainer p {
+    color: #aeaeae;
+    /* Light gray text, adjust the color to match the one in the image */
+    font-size: 1.3rem;
+    font-weight: 60!important;
+    width: 90%;
+}
+
+.textContainer a {
+    color: #FFFFFF;
+    /* Adjust the color to match the one in the image */
+    font-size: 1.4rem;
+    text-decoration: none;
+    /* Removes underline from links */
+    position: relative;
+    z-index: 9999;
+    /* Needed to position the arrow pseudo-elements */
+    transition: text-shadow 0.3s ease-in-out;
+    /* Give some space for the arrow */
+}
+
+
+
+/* If you want to add hover effects */
+.textContainer a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -3px;
+    /* Position the underline below the text */
+    left: 0;
+    background-color: #FFFFFF;
+    visibility: visible;
+    /* Hide the underline by default */
+    transition: width 0.3s ease-in-out;
+    z-index: 9999;
+    /* Animate the width change */
+}
+
+.rotate-45 {
+    transform: rotate(-45deg);
+}
+.textContainer a:hover {
+    text-shadow: 0 0 1px #FFFFFF, 0 0 2px #FFFFFF;
+    /* Glowing effect */
+}
+
+.textContainer a:hover::before {
+    visibility: visible;
+    /* Show the underline on hover */
+    width: 100%;
+    z-index: 9999;
+    
+    /* Full width */
+}
+
+.btn {
+    border: 0.5px solid #007bff;
+    border-radius: 5px;
+    padding: 5px 20px;
+    background-color: transparent;
+    color: #007bff;
+    font-weight: bold;
+    
+    letter-spacing: 2px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+   
+    position: relative;
+}
+
+.btn:hover {
+    background: #007bff;
+    color: white;
+    box-shadow: 0 0 5px #007bff,
+        0 0 25px #007bff,
+        0 0 50px #007bff,
+        0 0 200px #007bff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}

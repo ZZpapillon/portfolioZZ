@@ -1,0 +1,165 @@
+.aboutContainer {
+    font-family: Roboto Condensed, sans-serif;
+  
+}
+#about {
+    overflow-y: auto !important;
+        overflow-x: hidden !important;
+        
+       
+        
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* Ensure there's space between icons */
+  color: white;
+  /* Ensure there's space between icons */
+  position: relative;
+  width: 100%;
+  font-family: Roboto Condensed, sans-serif;
+}
+.skills-section {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  
+  padding: 20px;
+  border-radius: 10px;
+  
+  position: relative;
+  /* Ensure there's space between icons */
+}
+
+.skills-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* Changed from center to start */
+    align-items: start;
+    gap: 20px;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    will-change: transform;
+    
+    /* Add this line */
+    /* Ensure there's space between icons */
+}
+
+
+.skills-icons>* {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Adding box-shadow transition for a smoother effect */
+}
+
+.skills-icons>*:hover {
+    transform: translateY(-10px) scale(1.1);
+    /* Move up slightly and scale for a 3D pop effect */
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    /* Shadow gives the illusion of depth */
+}
+
+@media (min-width: 780px) and (max-width: 1000px) {
+
+    
+    .skills-section h4,
+    .skills-icons>* span {
+        font-size: 1rem;
+        /* Adjust font size */
+    }
+
+    .skills-icons {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .skills-section {
+        padding: 10px;
+    }
+
+    /* You might need to adjust the padding and margins of other elements as well */
+}
+
+@media  (max-width: 768px) {
+
+     #about {
+        
+         overflow-y: auto!important;
+         overflow-x: hidden!important;
+     }
+    .skills-section h4,
+    .skills-icons>* span {
+        font-size: 0.9rem;
+        /* Adjust font size */
+    }
+
+    .skills-icons {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .skills-section {
+        padding: 5px;
+    }
+        .skills {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .aboutText {
+            color: #aeaeae;
+            text-align: start;
+            width: 100%!important;
+            
+            font-size: 1.2rem!important;
+            padding-bottom: 1rem!important;
+        }
+
+    /* You might need to adjust the padding and margins of other elements as well */
+}
+
+@media (max-width: 400px) {
+    .aboutText {
+        font-size: 1rem!important;
+    }
+}
+
+#about::-webkit-scrollbar {
+    width: 10px !important;
+    /* Increase the width for better visibility */
+    z-index: 99999;
+    
+}
+
+#about::-webkit-scrollbar-track {
+    background: white;
+    /* Black background for high contrast */
+}
+
+#about::-webkit-scrollbar-thumb {
+
+    background: #007bff;
+    /* Your primary color for the thumb */
+    border-radius: 8px;
+    /* Rounded corners for a modern look */
+    border: 1px solid white;
+    /* Black border to match the track */
+}
+
+#about::-webkit-scrollbar-thumb:hover {
+    background: #007bff;
+    /* A slightly darker shade of your primary color for hover effect */
+}
